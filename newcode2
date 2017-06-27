@@ -1,0 +1,26 @@
+@BeforeMethod
+	public void setup () {
+		OrangeHRM.openOnLoginPage();
+	}
+	
+	 @Test
+	    public void testNumberOne() {
+	    	
+	    	String invalidMessage = "Invalid credentials";
+	    	
+	        WebElement findUserField = driver.findElement(By.xpath("//input[@id ='txtUsername']"));
+			
+					findUserField.click();
+			
+					waitFor(1);
+			
+					findUserField.sendKeys("Admin2");
+			
+					waitFor(2);
+			
+			
+			WebElement findPasswordField = driver.findElement(By.id("txtPassword"));
+					findPasswordField.click();
+			        findPasswordField.sendKeys("123456789");
+			
+			        waitFor(2);
